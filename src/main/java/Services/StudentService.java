@@ -1,9 +1,18 @@
 package Services;
 
-import Entity.Student;
+import Dao.Student;
+import Repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface StudentService {
-    List<Student> getAllStudents();
+    List<Student>getAllStudent();
+
+    Student savestudent (Student student);
+
+
+
 }

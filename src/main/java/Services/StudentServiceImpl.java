@@ -1,23 +1,31 @@
 package Services;
 
-import Entity.Student;
-import Repository.StudentRepo;
+import Dao.Student;
+import Dao.Student;
+import Repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.transaction.Transactional;
 import java.util.List;
-
-
 @Service
-public class StudentServiceImpl implements StudentService{
-    private StudentRepo studentRepo;
+public class StudentServiceImpl implements  StudentService {
+@Autowired
+private StudentRepository studentRepository;
 
-    public StudentServiceImpl(StudentRepo studentRepo) {
-      super();
-        this.studentRepo = studentRepo;
+    public StudentServiceImpl(StudentRepository studentRepository){
+        super();
+this.studentRepository=studentRepository;
     }
 
+
     @Override
-    public List<Student> getAllStudents(){
-        return studentRepo.findAll();
+    public List<Student> getAllStudent() {
+        return studentRepository.findAll();
+    }
+    @Override
+    public  Student savestudent(Student student){
+        return  studentRepository.save(student);
     }
 }
