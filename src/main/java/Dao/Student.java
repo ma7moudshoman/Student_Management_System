@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity
 
 @Table(name = "students")
@@ -26,5 +25,7 @@ public class Student {
     @Column(name = "email")
     private String email;
 
+public  Student(){
 
+}
 }
