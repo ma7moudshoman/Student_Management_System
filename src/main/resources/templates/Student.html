@@ -31,9 +31,9 @@
         <td th:text="${temp.email}"></td>
         <td th:text="${Action}"></td>
         <td>
-            <a class=" mybtn  btn btn-primary btn-lg active "  th:href="@{/editStudent(playerId=${temp.id})}" >Edit Student </a>
+            <a class=" mybtn  btn btn-primary btn-lg active "  th:href="@{/getStudent(playerId=${temp.id})}" >Edit Student </a>
 
-            <a class="mybtn btn btn-danger btn-lg active " >Remove Student </a>
+            <a class="mybtn btn btn-danger btn-lg active "  th:href="@{/removeStudent(playerId=${temp.id})}">Remove Student </a>
 
         </td>
     </tr>

@@ -5,10 +5,7 @@ import com.example.Student_Management_System.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 
@@ -44,20 +41,19 @@ public class StudentController {
         return "redirect:/students";
     }
 
-    //  http://localhost:8080/editStudent
+    //  http://localhost:8080/getStudent
 
-    @GetMapping("/editStudent")
-    public  String editStudent(@RequestParam("playerId") long id , Model model ){
+    @GetMapping("/getStudent")
+    public  String getStudent(@RequestParam("playerId") long id , Model model ){
         model.addAttribute("student",studentService.getStudent(id) );
         return "addedStudent";
     }
-    /*
-    //    http://localhost:8080/Update/{id}
-    @GetMapping("/Update/{id}")
-    public  String UpdateStudent( @RequestParam ("id") long id ,@RequestParam("name") String newname){
-        Student student= studentService.Updatestudent(id);
-        student.setFirstname(newname);
-        return  "success Update";
+
+    //    http://localhost:8080/removeStudent
+    @GetMapping("/removeStudent")
+    public  String removeStudent( @RequestParam ("playerId") long id ){
+        studentService.deleteStudent(id);
+        return "redirect:/students";
+
     }
-*/
 }
