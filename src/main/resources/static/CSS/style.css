@@ -1,0 +1,35 @@
+ h1 , .mydiv
+{
+  background-color: darkgray;
+    color: black;
+
+}
+
+.h1 {
+  text-align: left;
+  margin: 40px;
+
+}
+.table{
+  margin: 100px 0px 0px 200px;
+  width: 70%;
+}
+.mydiv{
+  margin: 100px 0px 0px 200px ;
+  padding: 30px;
+}
+.head{
+text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.add{
+ margin: 200px ;
+  margin-top: 5px;
+}
+.mybtn{
+  font-size: 10px;
+}
+
+
